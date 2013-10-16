@@ -1,0 +1,27 @@
+.btn{
+	margin-top: 10px;
+	height: 75px;
+	width:200px;
+	font-size: 25pt;
+}
+
+.modal-dialog{
+	width: 900px;
+	// width: 100%;
+}
+
+.panel{
+			border: 1px solid #302e2f;
+			border-radius: 0px;
+			
+			.panel-heading{
+				background-color: white;
+				.panel-title{
+				font-family: 'Quicksand', sans-serif;
+				font-size: 18pt;
+				}	
+			}
+			.panel-body{		
+			}
+			padding-top: 5px;
+}

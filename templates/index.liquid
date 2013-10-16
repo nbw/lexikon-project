@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+
+		<link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0" >
+	</head>
+
+	<body id="myScrollSpy" data-spy="scroll" data-target="#side-nav" data-offset="0">
+				<img id="background" src='img/background1500cropped2.jpg' class="img-responsive" ></img>
+				<div id="page-header">
+					<div id="logo-wrapper">
+						<img src="img/logo.png"></img>
+					</div>
+				</div>
+
+			
+<div id="project-wrapper">
+<!-- MAIN NAVBAR -->
+	 		<div id="main-nav-wrapper">
+		 		<div id="main-nav"  class="affix-top" data-spy='affix'>
+					<nav class="navbar navbar-default navbar-static-top" role="navigation">
+						<div class="navbar-header">
+						    <form  id="search-forum" class="navbar-form navbar-toggle pull-left" role="search" >
+				        			<input id="search-input" type="text" class="form-control" placeholder="Search" data-placement="bottom" data-html="true" data-bind="value: searchValue, valueUpdate: 'afterkeydown'" autocomplete="off">
+				    		</form>
+						</div>
+    				 	<div class="collapse navbar-collapse navbar-ex1-collapse" >
+						    <ul class="nav navbar-nav" >
+						      	<li class="active"><a id="about" href="#about-wrapper">About</a></li>
+					    		<form  id="search-forum" class="navbar-form navbar-left" role="search" >
+					      			<div class="form-group" style="display:inline-block;">
+					        			<input id="search-input" type="text" class="form-control" placeholder="Search" data-placement="bottom" data-html="true" data-bind="value: searchValue, valueUpdate: 'afterkeydown'" autocomplete="off">
+					      			</div>
+					      			<button id="search-btn" class="btn btn-default" type="submit">Submit</button>
+					    		</form>
+							    <ul class="nav navbar-nav navbar-right">
+							        <li><a id="word-list"  href="#word-list-wrapper" data-toggle="collapse">Word List</a></li>
+							      	<li><a id="contact" href="#contact-wrapper" data-toggle="collapse">Contact</a></li>
+							    </ul>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+
+	  	<div class="container">
+		  	<div id="about-wrapper" class="jumbotron">
+		        	<h1>Lexikon</h1>
+		        	<h3>About</h3>
+
+		        	<p class="lead">
+		        		The objective is to define words based on their literal definition. The project was taken on as a creative writing experiment.</p>
+		        	<h3>Examples</h3>
+		        	<p class='text-left'>
+		        		<strong>Multicolor</strong>: 
+		        			<span style="color:#761212">adj.;</span>
+		        			<span style="color:#0039a6"> more</span>
+		        			<span style="color:#e67b09"> than</span>
+		        			<span style="color:#8ac90c"> one</span>
+		        			<span style="color:#ff80b7"> color.</span>
+		        	</p> 
+		        	<p class='text-center'>
+		        		<strong>Reverse</strong>: .lausu su tahw ot etisoppo ;.jda 
+		        	</p>
+		        	<p class='text-right'>
+		        		<strong>Blurr</strong>:
+		        		<span style="color: transparent; text-shadow: 0 0 8px #000;">n.; something that you cannot see clearly.</span>
+		        	</p>
+		        	<h3>Code</h3>
+		        	<p class='text-center'>
+		        		All the code for the project is available on github <a href="">here</a>.
+		        	</p>
+		  	</div>	
+<!-- WORD LIST -->
+	  		<div class="row">
+	        	<div class="col-lg-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12" role="main" >
+	        		<div id="word-list-wrapper" class="collapse">
+					 	<table class='table table-condensed'>
+							<thead>
+								<tr>
+							        <th></th>
+							        <th class="text-center">Word</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for letter in dictionary %}
+									{% for item in letter.words %}
+										<tr>
+											<td class="text-center">{{letter.letter}}</td>
+											<td class="text-center">{{item.word}}</td>
+										</tr>
+									{% endfor %}
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+	        	</div>
+	        </div>
+<!-- CONTACT -->
+	        <div class="row">
+	        	<div class="col-lg-8 col-md-10 col-md-offset-2 col-sm-10 col-xs-10" role="main" >
+	        		<div id="contact-wrapper" class="collapse">
+					 	<p class="text-left" style="font-size: 15pt;">
+					 		Have any questions about the project?
+					 	</p>
+					 	<p class="text-center" style="font-size: 15pt;">Want to submit a word?</p>
+					 	<p class="text-right" style="font-size: 15pt;">Want to see the project code?</p>
+					 	<p class="text-center" style="font-size: 20pt;">Email: myemail@someaddress.com </p>
+					</div>
+	        	</div>
+	        </div>
+<!-- DICTIONARY	  	 -->
+			<div class="row">
+	        	<div class="col-lg-11 col-md-12 col-sm-12 col-xs-12" role="main">
+		        	<div class="panel-group" id="word-accordion">
+	        			{% for letter in dictionary %}
+	        				<div class="panel panel-default letter-panel" id="{{letter.letter}}">
+							    <a class="accordion-toggle" data-toggle="collapse" data-parent="#word-accordion" href="#{{letter.letter}}body">
+							    <div class="panel-heading letter-heading" data-toggle="collapse" data-parent="#word-accordion" data-target="#{{letter.letter}}body">
+							    	<h3 class="panel-title">
+							    		
+						  				{{letter.letter}}
+						    	 		
+						    	 	</h3>
+							    </div>
+							    </a>
+							    <div id="{{letter.letter}}body" class="panel-collapse collapse">
+								    <div class="panel-body">
+								    	<table>
+											{% for item in letter.words %}
+								    			<td><tr>
+								    				<div class="panel panel-default word-panel" id="{{item.word}}">
+												  		<div class="panel-heading">
+												    		<h3 class="panel-title">{{item.word}}</h3>
+												  		</div>
+													  	<div class="panel-body">
+														  	<blockquote>
+																<p>
+															  		{{item.definition}}
+														  		</p>
+														  		<small>{{item.author}}</small>
+															</blockquote>	
+													  	</div>
+													</div>
+								    			</tr></td>
+								    		{% endfor %}
+										</table>
+								    </div><!-- panel body -->
+								</div> <!-- collapse -->
+							</div>
+						{% endfor %}
+					</div><!-- end of accordion-->
+	        	</div><!-- left column -->
+
+<!-- LETTER NAVBAR -->
+		        <!-- THERE"S SOME CUSTOM HEIGHT STUFF GOING ON HERE!? -->
+	        	<div class="col-lg-1 col-md-1 hidden-md hidden-sm hidden-xs" role="navigation" >
+	        		<div id="side-nav" class="affix-top" data-spy='affix' >
+						<nav class="navbar navbar-default" role="navigation">
+						  <!-- Collect the nav links, forms, and other content for toggling -->
+						  <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+						    <ul class="nav navbar-nav">
+						    	{% for letter in dictionary %}
+						    	<li><a href="#{{letter.letter}}">{{letter.letter}}</a></li>
+						    	{% endfor %}
+						    </ul>
+						  <!-- </div>/.navbar-collapse -->
+						</nav>
+					</div> <!-- affix div -->
+				</div><!-- right column -->
+			</div><!-- row -->
+		</div> <!-- Container -->
+</div><!--  PROJECT WRAPPER -->
+
+		
+
+		<script type='text/javascript' src='js/knockout-2.3.0.js'></script>
+		<script type='text/javascript' src='js/jquery.js'></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/bootbox.min.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
+
+	
+
+		<script type="text/javascript">
+		$( document ).ready(function() {
+
+			//set wrapper to the same height as the nav. This creates a void of space and stops the nav from creating a jump when the affix is activated. 
+			// $('#main-nav-wrapper').height($('#main-nav').height()+10);
+			$(document).scrollTop(0);
+			$(document).click()
+			$("#main-nav").attr('data-offset-top',
+								($("#project-wrapper").offset().top)
+			);
+			$("#side-nav").attr('data-offset-top',
+								($("#about-wrapper").offset().top+$("#about-wrapper").height() - $(".navbar").height()+70) //70 from the body padding
+			);
+
+
+			$('#contact,#word-list').click(function(){
+				//scroll to the bottom of the about section
+				$(document).scrollTop($("#about-wrapper").height()*2);
+			});
+
+			//handle search request
+			$("#search-forum").submit(function(e){
+				e.preventDefault();
+				// Solution for capitalizing an input
+				var val = $("#search-input").val().toLowerCase();
+					val = val.slice(0,1).toUpperCase()+val.slice(1,val.length);
+				if(document.getElementById(val) !=null){
+					$("#"+val[0]+"body").collapse('show');
+					$(document).scrollTop($("#"+val).offset().top - 60);
+					$("#search-input").blur();//closes the ipad keyboard
+				}
+			});
+		});
+
+		
+		//custom string property
+		if (typeof String.prototype.startsWith != 'function') {
+		  String.prototype.startsWith = function (str){
+		    return this.slice(0, str.length) == str;
+		  };
+		}
+
+		</script>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%% -->
+<!--    KNOCKOUT functions    -->
+<!-- %%%%%%%%%%%%%%%%%%%%%%%% -->
+		<script type="text/javascript">
+
+		
+			function DictViewModel() {
+				var self = this;
+
+				self.searchValue = ko.observable();
+				self.wordList = [
+			      					{% for letter in dictionary %}
+				      					{% for item in letter.words %}
+					  						"{{item.word}}",
+										{% endfor %}
+									{% endfor %}
+			    ];
+
+				self.currSearch = ko.computed(function(){
+					if(self.searchValue() !== undefined){
+						if(self.searchValue().length >= 2 ){
+							var list  = self.wordList.filter(function(str){
+								formattedStr = self.searchValue().slice(0,1).toUpperCase()+
+												self.searchValue().slice(1,self.searchValue().length).toLowerCase();
+												console.log(formattedStr);
+								return (str.startsWith(formattedStr))
+								});
+							if(list.length >0){
+								var tableHTML = "<table>";
+									for(i =0;i<list.length;i++){
+										tableHTML += "<tr><td>" + list[i] + "</td></tr>"
+									}
+									tableHTML += "</table">
+								$("#search-input").attr('data-original-title',tableHTML); 
+								$("#search-input").tooltip('show');
+							}
+							else{
+								$("#search-input").tooltip('hide');
+							}
+							return list;
+						}
+					}
+				
+					$("#search-input").tooltip('hide')
+					return undefined;
+				});
+			}
+
+			window.viewModel = new DictViewModel();
+			ko.applyBindings(viewModel);
+
+		</script>
+		
+	</body>
+</html>

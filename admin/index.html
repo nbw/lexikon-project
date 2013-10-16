@@ -1,0 +1,86 @@
+<html>
+
+<head>
+	<link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/adminstyle.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div id="container">
+		<div class="row">
+			<div class="col-md-10  col-md-offset-1">
+				<h2>WORD</h2>
+				<form class="form-inline" role="form">
+				  <div class="form-group">
+				    <input type="text" class="form-control" id="word-field" placeholder="Word">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" id="author" value="Admin">
+				  </div>
+				</form> 
+				<h2>PANEL BODY</h2>
+				<textarea id= "text-field" class="form-control" rows="10"></textarea>
+					<a data-toggle="modal" id="sub-btn" href="#myModal" class="btn btn-primary btn-lg">Submit</a>
+					<!-- <button id="sub-btn" type="submit" class="btn btn-success">Submit</button> -->
+					
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10  col-md-offset-1">
+				
+			</div>
+		</div>
+	</div>
+
+  <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+        	<div class="modal-content">
+        		<div class="modal-body">
+          			<div id="preview"></div>
+        		</div>
+	        	<div class="modal-footer" style="text-align:center;">
+	            	<button id="fin-btn" type="button" class="btn btn-success" data-dismiss="modal">Finalize</button>
+	            	<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+	        	</div>
+        	</div><!-- /.modal-content -->
+    	</div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+</body>
+
+<script type='text/javascript' src='js/knockout-2.3.0.js'></script>
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type="text/javascript" src="js/jquery.hcsticky-min.js"></script>
+<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+
+$("#sub-btn").click(function(){
+	$("#preview").html('');
+	$("#preview").append('<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+$('#word-field').val()+'</h3></div><div class="panel-body"><blockquote><p>'+$('#text-field').val()+'</p><small>'+$('#author').val()+'</small></blockquote></div></div>');
+});
+
+$("#fin-btn").click(function(){
+	console.log("Posting word..");
+	$.post('api/addword',{
+		'word': $('#word-field').val(),
+		'author': $('#author').val(),
+		'panelbody': $('#text-field').val(),
+		'timestamp': new Date()
+	},function(data){
+		if( data.hasOwnProperty('error') ){
+			data.error
+		}
+		else{
+			console.log(data);
+		}			
+	});
+});
+
+</script>
+
+</html>
