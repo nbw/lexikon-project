@@ -5,8 +5,8 @@ The objective is to define words based on their literal definition. The project 
 </p>
 
 <p>
-The project was also taken on as a chance to create a product from the ground up. The front end is html/js and
-the backend is RUBY.
+The project was also taken on as a chance to create a product from the ground up. The front end is html/js, 
+the backend is RUBY, and the databse is hosted using postgres.
 </p>
 
 <h2>FEATURES</h2>
@@ -16,6 +16,7 @@ I will highlight some of the features as this project is meant as part of my por
 <ul>
   <li>Bootstrap font-end framework</li>
   <li>Reponsive layout optimized for desktop, iPad, iPhone4</li>
+  <li>Dynamic updating using knockoutjs
   <li>CSS programmed with SASS</li>
 </ul>
 
@@ -42,7 +43,7 @@ I will highlight some of the features as this project is meant as part of my por
   <li><a href="http://knockoutjs.com/">Knockout.js</a></li>
 </ul>
 
-<h2>BACKEND RUBY DEPENDENCIES</h2>
+<h2>BACK-END RUBY DEPENDENCIES</h2>
 <p>
   Install all the required ruby gems using the following: 
 </p>
@@ -53,4 +54,5 @@ gem install sinatra-contrib # for sinatra/reloader
 gem install liquid
 gem pg
 ```
+
 
