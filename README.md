@@ -19,15 +19,16 @@ I will highlight some of the features as this project is meant as part of my por
   <li>CSS programmed with SASS</li>
 </ul>
 
-![iphone screenshot](/screenshots/iphone.png?raw=true)
-![ipad screenshot](/screenshots/ipad.png?raw=true)
-
 <h3>Back-end</h3>
 <ul>
   <li>Ruby server</li>
   <li>RESTful HTTP application using <a href="http://www.sinatrarb.com/">Sinatra</a></li>
   <li><a href="http://www.postgresql.org/">Postgres</a> database</li>
 </ul>
+
+<h3>Screenshots</h3>
+![iphone screenshot](/screenshots/iphone.png?raw=true)
+![ipad screenshot](/screenshots/ipad.png?raw=true)
 
 
 <h2>JAVASCRIPT DEPENDENCIES</h2>
