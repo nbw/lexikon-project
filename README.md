@@ -12,16 +12,30 @@ the backend is RUBY.
 <h2>FEATURES</h2>
 I will highlight some of the features as this project is meant as part of my portfolio.
 
+<h3>Front-end</h3>
+<ul>
+  <li>Bootstrap font-end framework</li>
+  <li>Reponsive layout optimized for desktop, iPad, iPhone4</li>
+  <li>CSS programmed with SASS</li>
+</ul>
+
+<h3>Back-end</h3>
+<ul>
+  <li>Ruby server</li>
+  <li>RESTful HTTP application using <a href="http://www.sinatrarb.com/">Sinatra</a></li>
+  <li><a href="http://www.postgresql.org/">Postgres</a> database</li>
+</ul>
+
+
 <h2>JAVASCRIPT DEPENDENCIES</h2>
 <p>
   The project requires the following javascript libraries: 
 </p>
 <ul>
-
-<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
-<li>JQUERY</li>
-<li><a href="https://github.com/ftlabs/fastclick">Fast Click</a></li>
-<li><a href="http://knockoutjs.com/">Knockout.js</a></li>
+  <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+  <li><a href="http://jquery.com/">JQUERY</a></li>
+  <li><a href="https://github.com/ftlabs/fastclick">Fast Click</a></li>
+  <li><a href="http://knockoutjs.com/">Knockout.js</a></li>
 </ul>
 
 <h2>BACKEND RUBY DEPENDENCIES</h2>
