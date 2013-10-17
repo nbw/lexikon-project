@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'pg'
 
-require 'lib/Db'
+require Dir.pwd+'/lib/Db'
 
 puts "Clean TABLE: " + Db::TNAME + " or DATABASE: " + Db::DBNAME + "?"
 resp = gets.chomp

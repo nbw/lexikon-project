@@ -1,15 +1,13 @@
 require 'rubygems'
-require 'lib/serverconfig'
+require Dir.pwd+'/lib/serverconfig'
 
 module Db
-
-
 
 	@connection = nil
 
 	def self.connect
 		# PG::Connection.new(host, port, options, tty, dbname, user, password) → conn
-		@connection = PG::Connection.new( HOST, PORT, nil, nil, DBNAME, USER, PASSWORD )
+		@connection = PG::Connection.new( HOST, PORT, nil, nil, DBNAME,USER,PASSWORD )
 	end
 
 	def self.query(msg)

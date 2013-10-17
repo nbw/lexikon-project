@@ -4,7 +4,7 @@ require 'pg'
 require 'sinatra'
 require "sinatra/reloader" 
 
-require 'lib/Db'
+require Dir.pwd+'/lib/Db'
 
 Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
