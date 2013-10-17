@@ -1,9 +1,9 @@
+require 'rubygems'
+require 'lib/serverconfig'
+
 module Db
 
-	HOST = "localhost"
-	PORT = 5432
-	DBNAME = "dictproject"
-	TNAME = 'dict'
+
 
 	@connection = nil
 
