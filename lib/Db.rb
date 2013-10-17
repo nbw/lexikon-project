@@ -9,7 +9,7 @@ module Db
 
 	def self.connect
 		# PG::Connection.new(host, port, options, tty, dbname, user, password) → conn
-		@connection = PG::Connection.new( HOST, PORT, nil, nil, DBNAME, nil, nil )
+		@connection = PG::Connection.new( HOST, PORT, nil, nil, DBNAME, USER, PASSWORD )
 	end
 
 	def self.query(msg)
