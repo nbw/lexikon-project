@@ -4,3 +4,4 @@
 
 # serverconfig is user dependant
 * lib/serverconfig.rb
+* lib/config.rb
