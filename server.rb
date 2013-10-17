@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'json'
 require 'liquid'
 require 'pg'
 require 'sinatra'
