@@ -31,7 +31,7 @@ I will highlight some of the features as this project is meant as part of my por
 
 ``` 
 gem install Sintara
-gem install json
+gem install sinatra-contrib # for sinatra/reloader
 gem install liquid
 gem pg
 ```
