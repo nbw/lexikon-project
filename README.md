@@ -10,7 +10,7 @@ the backend is RUBY.
 </p>
 
 <h2>FEATURES</h2>
-I'll outline some of the features as this project is mean to used as part of a portfolio.
+I will highlight some of the features as this project is meant as part of my portfolio.
 
 <h2>JAVASCRIPT DEPENDENCIES</h2>
 <p>
