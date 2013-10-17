@@ -19,6 +19,9 @@ I will highlight some of the features as this project is meant as part of my por
   <li>CSS programmed with SASS</li>
 </ul>
 
+![iphone screenshot](/screenshots/iphone.png?raw=true)
+![ipad screenshot](/screenshots/ipad.png?raw=true)
+
 <h3>Back-end</h3>
 <ul>
   <li>Ruby server</li>
