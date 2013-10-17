@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'lib/serverconfig'
-require "nothing"
 module Db
 
 
