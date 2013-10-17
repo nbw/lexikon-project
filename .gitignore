@@ -1,0 +1,6 @@
+####################
+# Files to ignore
+####################
+
+# serverconfig is user dependant
+* lib/serverconfig.rb
