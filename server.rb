@@ -5,6 +5,7 @@ require 'sinatra'
 require "sinatra/reloader" 
 
 require Dir.pwd+'/lib/Db'
+require Dir.pwd+'/lib/serverconfig'
 
 Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
@@ -64,7 +65,7 @@ end
 
 def authorized?
 @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-@auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == ["chicken","soup"]
+@auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == [ADMINUSER,ADMINPASS]
 end
 
 def protected!

@@ -9,3 +9,5 @@ DBNAME = "dictproject"
 TNAME = 'dict'
 USER = nil;
 PASSWORD = nil;
+ADMINUSER = 'chicken'
+ADMINPASS = 'soup'
