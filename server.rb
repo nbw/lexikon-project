@@ -60,7 +60,7 @@ post '/api/addword' do
 	puts params.inspect
 
 	Db.connect
-	Db.query("INSERT INTO "+Db::TNAME+" VALUES('" +word+ "','" +panelbody+ "','" +author+"',now(),TRUE)")
+	Db.query("INSERT INTO "+TNAME+" VALUES('" +word+ "','" +panelbody+ "','" +author+"',now(),TRUE)")
 end
 
 def authorized?
