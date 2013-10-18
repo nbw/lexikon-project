@@ -8,6 +8,7 @@ require Dir.pwd+'/lib/Db'
 
 Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
+Sinatra::Base.set(:port, 4747)
 
 
 get '/' do
