@@ -1,5 +1,7 @@
 <h1>LEXIKON PROJECT</h1>
 
+<h2><a href="http://lexikon.nathanwillson.com">lexikon.nathanwillson.com</a></h2>
+
 <p>
 The objective is to define words based on their literal definition. The project was taken on as a creative writing experiment.
 </p>
