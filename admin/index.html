@@ -10,7 +10,7 @@
 	<div id="container">
 		<div class="row">
 			<div class="col-md-10  col-md-offset-1">
-				<h2>WORD</h2>
+				<h2 id="title">WORD</h2>
 				<form class="form-inline" role="form">
 				  <div class="form-group">
 				    <input type="text" class="form-control" id="word-field" placeholder="Word">
@@ -70,14 +70,14 @@ $("#fin-btn").click(function(){
 		'author': $('#author').val(),
 		'panelbody': $('#text-field').val(),
 		'timestamp': new Date()
-	},function(data){
-		if( data.hasOwnProperty('error') ){
-			data.error
-		}
-		else{
-			console.log(data);
-		}			
+	})
+	.done(function(data){
+		$("#title").text("Word [ Success: "+$('#word-field').val()+ " ]");
+	})
+	.fail(function(err){
+		$("#title").text("Word [ Error "+$('#word-field').val()+ " ]");
 	});
+
 });
 
 </script>
