@@ -1,5 +1,4 @@
-<h1>LEXIKON PROJECT</h1>
-
+<h1>LEXIKON PROJECT:</h1>
 <p>
 The objective is to define words based on their literal definition. The project was taken on as a creative writing experiment.
 </p>
@@ -8,6 +7,9 @@ The objective is to define words based on their literal definition. The project 
 The project was also taken on as a chance to create a product from the ground up. The front end is html/js, 
 the backend is RUBY, and the databse is hosted using postgres.
 </p>
+
+<h3>Site running at: <a href="http://lexikon.nathanwillson.com">lexikon.nathanwillson.com</a></h3>
+
 
 <h2>FEATURES</h2>
 I will highlight some of the features as this project is meant as part of my portfolio.
