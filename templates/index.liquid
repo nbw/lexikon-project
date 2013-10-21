@@ -189,22 +189,20 @@
 		<script type="text/javascript">
 		$( document ).ready(function() {
 
-			//set wrapper to the same height as the nav. This creates a void of space and stops the nav from creating a jump when the affix is activated. 
-			// $('#main-nav-wrapper').height($('#main-nav').height()+10);
+			FastClick.attach(document.body);
 			$(document).scrollTop(0);
+
 			$(document).click()
 			$("#main-nav").attr('data-offset-top',
 								($("#project-wrapper").offset().top)
 			);
+
 			$("#side-nav").attr('data-offset-top',
 								($("#about-wrapper").offset().top+$("#about-wrapper").height() - $(".navbar").height()+70) //70 from the body padding
 			);
 
-
 			$('#contact,#word-list').click(function(){
-				//scroll to the bottom of the about section
-				$(document).scrollTop($("#about-wrapper").height()*2);
-			});
+				$(document).scrollTop($("#about-wrapper").height()*2);});
 
 			//handle search request
 			$("#search-forum, #search-forum-collapsed").submit(function(e){
