@@ -20,6 +20,7 @@ I will highlight some of the features as this project is meant as part of my por
   <li>Reponsive layout optimized for desktop, iPad, iPhone4</li>
   <li>Dynamic updating using knockoutjs
   <li>CSS programmed with SASS</li>
+  <li>Templating using Liquid</li>
 </ul>
 
 <h3>Back-end</h3>
