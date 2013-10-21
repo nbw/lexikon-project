@@ -187,12 +187,15 @@
 	
 
 		<script type="text/javascript">
-		$( document ).ready(function() {
-
+		$( document ).ready(function() { 
+			//prevents nav from jumping when affix triggered
+			$('#main-nav-wrapper').height($('#main-nav').height()+10);
+			//turn on fast click
 			FastClick.attach(document.body);
+			//forced scrolltop.
 			$(document).scrollTop(0);
-
-			$(document).click()
+			//forced click
+			$(document).click();
 			$("#main-nav").attr('data-offset-top',
 								($("#project-wrapper").offset().top)
 			);
