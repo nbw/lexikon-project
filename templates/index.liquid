@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Lexikon Project</title>	
-		<link rel="icon" type="image/png" href="img/favicon.png">
-		<link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="css/style.css" rel="stylesheet" type="text/css">
-		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0" >
+	<title>Lexikon Project</title>	
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+</head>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0" >
-	</head>
-
-	<body id="myScrollSpy" data-spy="scroll" data-target="#side-nav" data-offset="0">
-				<img id="background" src='img/background1500cropped2.jpg' class="img-responsive" ></img>
-				<div id="page-header">
-					<div id="logo-wrapper">
-						<img src="img/logo.png"></img>
-					</div>
-				</div>
-
-			
-<div id="project-wrapper">
+<body id="myScrollSpy" data-spy="scroll" data-target="#side-nav" data-offset="0">
+	<img id="background" src='img/background1500cropped2.jpg' class="img-responsive" ></img>
+	<div id="page-header">
+		<div id="logo-wrapper">
+			<img src="img/logo.png"></img>
+		</div>
+	</div>
+	
+	<div id="project-wrapper">
 <!-- MAIN NAVBAR -->
 	 		<div id="main-nav-wrapper">
 		 		<div id="main-nav"  class="affix-top" data-spy='affix'>
@@ -121,13 +119,9 @@
 	        			{% for letter in dictionary %}
 	        				<div class="panel panel-default letter-panel" id="{{letter.letter}}">
 							    <a class="accordion-toggle" data-toggle="collapse" data-parent="#word-accordion" href="#{{letter.letter}}body">
-							    <div class="panel-heading letter-heading" data-toggle="collapse" data-parent="#word-accordion" data-target="#{{letter.letter}}body">
-							    	<h3 class="panel-title">
-							    		
-						  				{{letter.letter}}
-						    	 		
-						    	 	</h3>
-							    </div>
+								    <div class="panel-heading letter-heading" data-toggle="collapse" data-parent="#word-accordion" data-target="#{{letter.letter}}body">
+								    	<h3 class="panel-title">{{letter.letter}}</h3>
+								    </div>
 							    </a>
 							    <div id="{{letter.letter}}body" class="panel-collapse collapse">
 								    <div class="panel-body">
@@ -136,7 +130,9 @@
 								    			<td><tr>
 								    				<div class="panel panel-default word-panel" id="{{item.word}}">
 												  		<div class="panel-heading">
-												    		<h3 class="panel-title">{{item.word}}</h3>
+												    		<h3 class="panel-title">
+												    			{{item.word}}
+												    		</h3>
 												  		</div>
 													  	<div class="panel-body">
 														  	<blockquote>
@@ -158,35 +154,30 @@
 	        	</div><!-- left column -->
 
 <!-- LETTER NAVBAR -->
-		        <!-- THERE"S SOME CUSTOM HEIGHT STUFF GOING ON HERE!? -->
 	        	<div class="col-lg-1 col-md-1 hidden-md hidden-sm hidden-xs" role="navigation" >
 	        		<div id="side-nav" class="affix-top" data-spy='affix' >
 						<nav class="navbar navbar-default" role="navigation">
-						  <!-- Collect the nav links, forms, and other content for toggling -->
-						  <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
 						    <ul class="nav navbar-nav">
 						    	{% for letter in dictionary %}
 						    	<li><a href="#{{letter.letter}}">{{letter.letter}}</a></li>
 						    	{% endfor %}
 						    </ul>
-						  <!-- </div>/.navbar-collapse -->
 						</nav>
 					</div> <!-- affix div -->
 				</div><!-- right column -->
 			</div><!-- row -->
 		</div> <!-- Container -->
-</div><!--  PROJECT WRAPPER -->
+	</div><!--  PROJECT WRAPPER -->
 
-		
 
-		<script type='text/javascript' src='js/knockout-2.3.0.js'></script>
-		<script type='text/javascript' src='js/jquery.js'></script>
-		<script type="text/javascript" src="js/fastclick.js"></script>
-		<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
+	<script type='text/javascript' src='js/knockout-2.3.0.js'></script>
+	<script type='text/javascript' src='js/jquery.js'></script>
+	<script type="text/javascript" src="js/fastclick.js"></script>
+	<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
 
-	
+	<script type="text/javascript" src="lib/myknockout.js"></script>
 
-		<script type="text/javascript">
+	<script type="text/javascript">
 		$( document ).ready(function() { 
 			//prevents nav from jumping when affix triggered
 			$('#main-nav-wrapper').height($('#main-nav').height()+10);
@@ -197,15 +188,16 @@
 			//forced click
 			$(document).click();
 			$("#main-nav").attr('data-offset-top',
-								($("#project-wrapper").offset().top)
+				($("#project-wrapper").offset().top)
 			);
 
 			$("#side-nav").attr('data-offset-top',
-								($("#about-wrapper").offset().top+$("#about-wrapper").height() - $(".navbar").height()+70) //70 from the body padding
+				($("#about-wrapper").offset().top+$("#about-wrapper").height() - $(".navbar").height()+70) //70 from the body padding
 			);
 
 			$('#contact,#word-list').click(function(){
-				$(document).scrollTop($("#about-wrapper").height()*2);});
+				$(document).scrollTop($("#about-wrapper").height()*2);
+			});
 
 			//handle search request
 			$("#search-forum, #search-forum-collapsed").submit(function(e){
@@ -221,7 +213,14 @@
 			});
 		});
 
-		
+		var wordList = [
+	      					{% for letter in dictionary %}
+		      					{% for item in letter.words %}
+			  						"{{item.word}}",
+								{% endfor %}
+							{% endfor %}
+		];
+
 		//custom string property
 		if (typeof String.prototype.startsWith != 'function') {
 		  String.prototype.startsWith = function (str){
@@ -229,60 +228,9 @@
 		  };
 		}
 
-		</script>
+		viewModel = new DictViewModel();
+		ko.applyBindings(viewModel);
 
-<!-- %%%%%%%%%%%%%%%%%%%%%%%% -->
-<!--    KNOCKOUT functions    -->
-<!-- %%%%%%%%%%%%%%%%%%%%%%%% -->
-		<script type="text/javascript">
-
-		
-			function DictViewModel() {
-				var self = this;
-
-				self.searchValue = ko.observable();
-				self.wordList = [
-			      					{% for letter in dictionary %}
-				      					{% for item in letter.words %}
-					  						"{{item.word}}",
-										{% endfor %}
-									{% endfor %}
-			    ];
-
-				self.currSearch = ko.computed(function(){
-					if(self.searchValue() !== undefined){
-						if(self.searchValue().length >= 2 ){
-							var list  = self.wordList.filter(function(str){
-								formattedStr = self.searchValue().slice(0,1).toUpperCase()+
-												self.searchValue().slice(1,self.searchValue().length).toLowerCase();
-												console.log(formattedStr);
-								return (str.startsWith(formattedStr))
-								});
-							if(list.length >0){
-								var tableHTML = "<table>";
-									for(i =0;i<list.length;i++){
-										tableHTML += "<tr><td>" + list[i] + "</td></tr>"
-									}
-									tableHTML += "</table">
-								$("#search-input,#search-input-collapsed ").attr('data-original-title',tableHTML); 
-								$("#search-input,#search-input-collapsed").tooltip('show');
-							}
-							else{
-								$("#search-input").tooltip('hide');
-							}
-							return list;
-						}
-					}
-				
-					$("#search-input").tooltip('hide')
-					return undefined;
-				});
-			}
-
-			window.viewModel = new DictViewModel();
-			ko.applyBindings(viewModel);
-
-		</script>
-		
-	</body>
+	</script>
+</body>
 </html>

@@ -13,16 +13,11 @@ Sinatra::Base.set(:port, 4747)
 
 
 get '/' do
-
 	Db.connect
 	liquid(:index, :locals => { :dictionary => get_words })
-  	# return File.read("#{File.dirname(__FILE__)}/static/index.html")
-
 end
 
 def get_words()
-
-	puts "MARKER"
 
 	res = Db.query("SELECT word, definition, author, date FROM dict WHERE active = TRUE ORDER BY word;")
 	letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
