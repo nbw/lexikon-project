@@ -60,7 +60,7 @@
 
 $("#sub-btn").click(function(){
 	$("#preview").html('');
-	$("#preview").append('<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">'+$('#word-field').val()+'</h3></div><div class="panel-body"><blockquote><p>'+$('#text-field').val()+'</p><small>'+$('#author').val()+'</small></blockquote></div></div>');
+	$("#preview").append('<div class="panel panel-default word-panel" id='+$('#word-field').val()+'><div class="panel-heading"><h3 class="panel-title">'+$('#word-field').val()+'</h3></div><div class="panel-body"><blockquote><p>'+$('#text-field').val()+'</p><small>'+$('#author').val()+'</small></blockquote></div></div>');
 });
 
 $("#fin-btn").click(function(){
