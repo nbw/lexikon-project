@@ -12,7 +12,7 @@ the backend is RUBY, and the databse is hosted using postgres.
 
 
 <h2>FEATURES</h2>
-I will highlight some of the features as this project is meant as part of my portfolio.
+I will highlight some of the features as this project is part of my portfolio.
 
 <h3>Front-end</h3>
 <ul>
