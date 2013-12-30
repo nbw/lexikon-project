@@ -5,7 +5,7 @@ The objective is to define words based on their literal definition. The project 
 
 <p>
 The project was also taken on as a chance to create a product from the ground up. The front end is html/js, 
-the backend is RUBY, and the databse is hosted using postgres.
+the backend is RUBY, and the database is hosted using postgres.
 </p>
 
 <h3>Site running at: <a href="http://lexikon.nathanwillson.com">lexikon.nathanwillson.com</a></h3>
