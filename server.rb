@@ -63,6 +63,8 @@ post '/api/addword' do
 	Db.query("INSERT INTO "+TNAME+" VALUES('" +word+ "','" +panelbody+ "','" +author+"',now(),TRUE)")
 
 	dictionary = get_words #update the words
+
+	return status_code(200)
 end
 
 def authorized?
