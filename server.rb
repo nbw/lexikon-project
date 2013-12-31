@@ -39,7 +39,7 @@ def get_words()
 		end
 		@dict << {"letter" => letter, "words" => arr} 
 	end
-	return dictionary
+	return dict
 end
 
 dictionary = get_words;
