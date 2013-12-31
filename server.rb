@@ -42,7 +42,7 @@ def get_words()
 	return dictionary
 end
 
-dictionary = get_words();
+dictionary = get_words;
 
 ################
 # ADMIN ACCESS
