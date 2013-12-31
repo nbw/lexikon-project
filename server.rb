@@ -16,7 +16,7 @@ get '/' do
 	liquid(:index, :locals => { :dictionary => dictionary })
 end
 
-def get_words()
+def get_words
 
 	res = Db.query("SELECT word, definition, author, date FROM dict WHERE active = TRUE ORDER BY word;")
 	letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
@@ -58,7 +58,7 @@ post '/api/addword' do
 	Db.connect
 	Db.query("INSERT INTO "+TNAME+" VALUES('" +word+ "','" +panelbody+ "','" +author+"',now(),TRUE)")
 
-	dictionary = get_words(); #update the words
+	dictionary = get_words; #update the words
 end
 
 def authorized?
