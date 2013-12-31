@@ -11,8 +11,8 @@ Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
 Sinatra::Base.set(:port, 4747)
 
+
 get '/' do
-	Db.connect
 	liquid(:index, :locals => { :dictionary => dictionary })
 end
 
@@ -42,6 +42,7 @@ def get_words
 	return dict
 end
 
+Db.connect
 dictionary = get_words
 
 ################
