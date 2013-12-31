@@ -20,7 +20,7 @@ def get_words()
 
 	res = Db.query("SELECT word, definition, author, date FROM dict WHERE active = TRUE ORDER BY word;")
 	letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-	@dict = []
+	dict = []
 	i=0
 
 	letters.each do |letter|
@@ -37,12 +37,12 @@ def get_words()
 					break if i == (res.ntuples)
 			end
 		end
-		@dict << {"letter" => letter, "words" => arr} 
+		dict << {"letter" => letter, "words" => arr} 
 	end
 	return dict
 end
 
-dictionary = get_words;
+dictionary = get_words
 
 ################
 # ADMIN ACCESS
