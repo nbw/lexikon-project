@@ -11,17 +11,16 @@ Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
 Sinatra::Base.set(:port, 4747)
 
-
 get '/' do
 	Db.connect
-	liquid(:index, :locals => { :dictionary => get_words })
+	liquid(:index, :locals => { :dictionary => dictionary })
 end
 
 def get_words()
 
 	res = Db.query("SELECT word, definition, author, date FROM dict WHERE active = TRUE ORDER BY word;")
 	letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-	dictionary = []
+	@dict = []
 	i=0
 
 	letters.each do |letter|
@@ -38,10 +37,12 @@ def get_words()
 					break if i == (res.ntuples)
 			end
 		end
-		dictionary << {"letter" => letter, "words" => arr} 
+		@dict << {"letter" => letter, "words" => arr} 
 	end
 	return dictionary
 end
+
+dictionary = get_words();
 
 ################
 # ADMIN ACCESS
@@ -56,6 +57,8 @@ post '/api/addword' do
 
 	Db.connect
 	Db.query("INSERT INTO "+TNAME+" VALUES('" +word+ "','" +panelbody+ "','" +author+"',now(),TRUE)")
+
+	dictionary = get_words(); #update the words
 end
 
 def authorized?
@@ -75,3 +78,5 @@ protected!
 	Db.connect
   	return File.read("#{File.dirname(__FILE__)}/admin/index.html")
 end
+
+
