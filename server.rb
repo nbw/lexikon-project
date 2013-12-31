@@ -11,9 +11,6 @@ Sinatra::Base.set(:public_folder, 'static')
 Sinatra::Base.set(:views, 'templates')
 Sinatra::Base.set(:port, 4747)
 
-
-
-
 def get_words
 
 	res = Db.query("SELECT word, definition, author, date FROM dict WHERE active = TRUE ORDER BY word;")
@@ -42,6 +39,10 @@ end
 
 Db.connect
 dictionary = get_words
+
+################
+# USER ACCESS
+################
 
 get '/' do
 	liquid(:index, :locals => { :dictionary => dictionary })
