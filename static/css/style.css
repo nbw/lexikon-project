@@ -1,6 +1,9 @@
 body {
   font-family: 'Quicksand', sans-serif;
-  margin: 0px; }
+  margin: 0px; 
+  text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   body padding {
     top: 70px;
     bottom: 0px;
